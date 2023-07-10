@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  background: url('./images/main.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.open {
+  position: absolute;
+  padding: 20px;
+  top: 21%;
+  left: 27%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.closeModal {
+  color: #fff;
+  position: absolute;
+  top: 2%;
+  right: 10%;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #ccc;
+  text-decoration: none;
+}
+
+#modalContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#modalViewer {
+  width: 80%;
+  height: 80%;
+  border: none;
+}
+
+.header {
+  margin: 0 30px;
+  padding-top: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rightside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  gap: 30px;
+  padding-bottom: 10px;
+}
+
+.socialMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-right: 2px solid rgba(255, 255, 255, 0.25);
+  border-left: 2px solid rgba(255, 255, 255, 0.25);
+  padding: 0 10px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  border-right: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.logo p {
+  font-family: 'Montserrat';
+  font-size: 6px;
+  color: #fff;
+  margin-left: 40px;
+  position: relative;
+  bottom: 7px;
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  padding: 4px;
+  background-color: black;
+  color: #fff;
+  font-family: 'Montserrat';
+}
+
+.card h4 {
+  font-size: 12px;
+  padding: 0 2px;
+  background-color: #fff;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+.apartments {
+  top: 20%;
+  left: 50%;
+}
+
+.park {
+  top: 55%;
+  left: 35%;
+}
+
+.mansions {
+  top: 58%;
+  left: 8%;
+}
+
+.road {
+  top: 75%;
+  left: 65%;
+}
+
+.download {
+  display: flex;
+  position: absolute;
+  top: 85%;
+  left: 5%;
+  font-weight: 400;
+  font-family: 'Montserrat';
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  background-color: #191919;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  gap: 10px;
+}
+
+.modalForm {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  font-family: 'Montserrat';
+  background: #000;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.50);
+}
+
+.modalForm-content {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 60vh;
+  margin: 20px auto;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background: url('./images/rectangle.jpg') no-repeat center center/cover;
+  flex-basis: 50%;
+  position: relative;
+}
+
+.company-info {
+  color: #fff;
+}
+
+.company-info h2 {
+  font-family: 'Times New Roman';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 45px;
+  text-align: center;
+}
+
+.company-info p {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+} 
+
+.media, .media div {
+  display: flex;
+  gap: 20px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.media div {
+  gap: 10px;
+}
+
+.media {
+  margin-top: 40px;
+  display: flex;
+}
+
+.modal-form {
+  flex-basis: 50%;
+  padding: 20px;
+}
+
+.modal-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal-form label {
+  margin-bottom: 10px;
+}
+
+.modal-form input {
+  color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  outline: none;
+  border-color: rgba(145, 145, 145, 1);
+}
+
+.join-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #fff;
+  color: black;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>360 Image Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #container {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    // Создаем сцену, камеру и рендерер
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    var renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById("container").appendChild(renderer.domElement);
+
+    // Создаем сферу с текстурой 360-градусного изображения
+    var geometry = new THREE.SphereGeometry(5, 60, 40);
+    geometry.scale(-1, 1, 1); // Переворачиваем геометрию, чтобы изображение было внутри сферы
+    var texture = new THREE.TextureLoader().load("../images/360.png");
+    var material = new THREE.MeshBasicMaterial({ map: texture });
+    var sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
+
+    // Позиционируем камеру
+    camera.position.set(0, 0, 0.1);
+
+    // Добавляем обработчики событий для вращения сферы с помощью мыши
+    var isDragging = false;
+    var previousMousePosition = { x: 0, y: 0 };
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+
+    function onMouseDown(event) {
+      isDragging = true;
+      previousMousePosition = {
+        x: event.clientX,
+        y: event.clientY
+      };
+    }
+
+    function onMouseMove(event) {
+      if (!isDragging) {
+        return;
+      }
+
+      var deltaMove = {
+        x: event.clientX - previousMousePosition.x,
+        y: event.clientY - previousMousePosition.y
+      };
+
+      var rotationSpeed = 0.14;
+
+      sphere.rotation.y -= toRadians(deltaMove.x * rotationSpeed);
+      sphere.rotation.x -= toRadians(deltaMove.y * rotationSpeed);
+
+      previousMousePosition = {
+        x: event.clientX,
+        y: event.clientY
+      };
+    }
+
+    function onMouseUp(event) {
+      isDragging = false;
+    }
+
+    function toRadians(angle) {
+      return angle * (Math.PI / 180);
+    }
+
+    // Отрисовываем сцену
+    function animate() {
+      requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
+</body>
+
+</html>

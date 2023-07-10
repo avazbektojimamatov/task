@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Ritz-Carlton Residences</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="logo">
+        <p>DUBAI, GREEKSIDE</p>
+      </div>
+      <div class="rightside">
+        <div class="socialMedia">
+          <img src="./images/telegram.svg" alt="">
+          <img src="./images/whatsapp.svg" alt="">
+        </div>
+        <div class="phoneNumber">
+          <p>+99899 XXX XX XX</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="topDark"></div>
+    <div class="bottomDark"></div>
+
+    <div class="card apartments">
+      <h4>M1</h4>
+      <p>Apartments</p>
+    </div>
+    <div class="card park">
+      <h4>P1</h4>
+      <p>Park</p>
+    </div>
+    <div class="card mansions">
+      <h4>M2</h4>
+      <p>Mansions</p>
+    </div>
+    <div class="card road">
+      <h4>R2</h4>
+      <p>Road</p>
+    </div>
+
+    <button class="open" onclick="openModal()">Open</button>
+
+    <div id="myModal" class="modal">
+      <span class="closeModal" onclick="closeModal()">&times;</span>
+      <div id="modalContent"></div>
+    </div>
+
+    <button class="download" onclick="openFormModal()">
+      DOWNLOAD BROCHURE
+      <img src="./images/download.svg" alt="">
+    </button>
+
+    <div id="myModalForm" class="modalForm">
+      <span class="close" onclick="closeFormModal()">&times;</span>
+      <div class="modalForm-content">
+        <div class="modal-content">
+          <div class="company-info">
+            <h2>Don't Miss <br>The Unique Offer</h2>
+            <p>Be the first to experience the beauty of Keturah Resort at our exclusive private screening event! Leave
+              your contact information below to receive an invitation to our special event.</p>
+
+            <div class="media">
+              <div>
+                <img src="./images/telegram.svg" alt="">
+                Telegram
+              </div>
+              <div>
+                <img src="./images/whatsapp.svg" alt="">
+                Whatsapp
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="modal-form">
+          <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <button class="join-btn" type="submit">JOIN NOW</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
